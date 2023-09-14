@@ -1,39 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;800&display=swap');
 
 
 .News {
-    font-family: Arial, sans-serif;
+    font-family: 'Dosis', sans-serif;
     margin: 20px;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f5f5f5;
+
+    
   }
 
   
   h1 {
     font-size: 24px;
     margin-bottom: 20px;
+    color: #E0E7E9;
   }
   .header {
     background-color: #354649;
-    padding: 10px 20px; 
-    color: #fff; 
+    color: #E0E7E9; 
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     font-family: 'Dosis', sans-serif;
+    width: auto;
+    padding: 10px 40px;
+    position: sticky;
+    top: 0;
+  }
+  .left
+  {
+    display: flex;
+    align-items: center;
+  }
+  .header button{
+    border: 1.5px solid #E0E7E9;
+    height: 50px;
+    width: 200px;
+    background-color: #6C7A89;
+    color: #E0E7E9;
+    border-radius: 40px;
+    font-family: 'Dosis', sans-serif;
+    font-size: 17px;
+    font-weight: 800;
   }
 
+  .header button:hover {
+    background-color: #A3C6C4;
+    color: #354649;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+
+
+
+ 
   .header h1{
-    margin: 0px 10px;
-    font-size: 25px;
+    font-size: 20px;
   }
   .header img{
     width: 100px;
-    height: 100px;
+    height: 70px;
+    object-fit: contain;
     
   }
 
@@ -48,31 +77,54 @@
     text-decoration: none;
   }
   
-  button:hover {
-    background-color: #0056b3;
-  }
+
   
   h2 {
     font-size: 20px;
     margin-top: 20px;
   }
   
-  ul {
+/* Add individual background colors to each list item */
+ul {
     list-style: none;
     padding: 0;
   }
   
   li {
     margin-bottom: 20px;
+ /* Set your desired background color here */
+    padding: 20px; /* Add padding for spacing */
+    border-radius: 5px; /* Add rounded corners */
+    background-color: #E0E7E9;
   }
   
+  /* Style the links within the list items */
   a {
     text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
+    color: #354649;
+    font-weight: 800;
+    font-size: 25px;
+  }
+
+  li p{
+    font-weight: 400;
+    font-size: 20px;
   }
   
   a:hover {
     text-decoration: underline;
   }
   
+  .News h2{
+    font-weight: 800;
+    font-size: 30px;
+    color: #354649 ;
+  }
+  .News h2::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px; /* Adjust the height as needed */
+    background-color: #354649; /* Set the color of the line */
+    margin-top: 10px; /* Adjust the margin to control the spacing */
+  }

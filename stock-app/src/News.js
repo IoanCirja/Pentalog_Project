@@ -35,20 +35,20 @@ function News() {
   return (
     <div>
       <div className="header">
-      <img src="/stock-logo.svg" alt="Stock Tracker Logo" />
-
-        <h1>Stock Tracker</h1>
-        <div>
-        <Link to="/">
-          <button>Return to Home</button>
-        </Link>
-
+        <div className="left">
+          <img src="/stock-logo.svg" alt="Stock Tracker Logo" />
+          <h1>Stock Tracker</h1>
         </div>
 
+        <div className="right">
+          <Link to="/">
+            <button>Return to Home</button>
+          </Link>
+        </div>
       </div>
 
       <div className="News">
-        <h2>Company & Market News</h2>
+        <h2>WHAT'S TRENDING</h2>
         {loadingNews ? (
           <p>Loading news...</p>
         ) : (
