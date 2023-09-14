@@ -1,36 +1,33 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./News.css";
 
 function News() {
   const [news, setNews] = useState([]);
   const [loadingNews, setLoadingNews] = useState(true);
+  const [filterOption, setFilterOption] = useState("general");
 
   useEffect(() => {
     const apiKey = process.env.REACT_APP_FINHUB_API_KEY;
+    const newsApiUrl = `https://finnhub.io/api/v1/news?category=${filterOption}&token=${apiKey}`;
 
-    const fetchMarketNews = axios.get(
-      `https://finnhub.io/api/v1/news?category=general&token=${apiKey}`
-    );
-
-    const fetchCompanyNews = axios.get(
-      `https://finnhub.io/api/v1/company-news?symbol=AAPL&from=2023-08-15&to=2023-08-20&token=${apiKey}`
-    );
-
-    Promise.all([fetchMarketNews, fetchCompanyNews])
-      .then(([marketResponse, companyResponse]) => {
-        const marketNews = marketResponse.data.slice(0, 25);
-        const companyNews = companyResponse.data.slice(0, 25);
-        const mergedNews = [...marketNews, ...companyNews];
-        setNews(mergedNews);
+    axios
+      .get(newsApiUrl)
+      .then((response) => {
+        const newsData = response.data.slice(1, 26);
+        setNews(newsData);
         setLoadingNews(false);
       })
       .catch((error) => {
         console.error("Error fetching news:", error);
         setLoadingNews(false);
       });
-  }, []);
+  }, [filterOption]);
+
+  const handleCategoryFilterChange = (event) => {
+    setFilterOption(event.target.value);
+  };
 
   return (
     <div>
@@ -48,7 +45,22 @@ function News() {
       </div>
 
       <div className="News">
-        <h2>WHAT'S TRENDING</h2>
+
+        <div className="filters">
+          <h2>WHAT'S TRENDING</h2>
+          <select
+              value={filterOption}
+              onChange={handleCategoryFilterChange}
+              className="filter-select"
+            >
+              <option value="general">General News</option>
+              <option value="forex">Forex News</option>
+              <option value="crypto">Crypto News</option>
+              <option value="merger">Merger News</option>
+          </select>
+        </div>
+
+
         {loadingNews ? (
           <p>Loading news...</p>
         ) : (
