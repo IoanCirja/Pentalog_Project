@@ -20,8 +20,8 @@ function News() {
 
     Promise.all([fetchMarketNews, fetchCompanyNews])
       .then(([marketResponse, companyResponse]) => {
-        const marketNews = marketResponse.data.slice(0, 5);
-        const companyNews = companyResponse.data.slice(0, 5);
+        const marketNews = marketResponse.data.slice(0, 25);
+        const companyNews = companyResponse.data.slice(0, 25);
         const mergedNews = [...marketNews, ...companyNews];
         setNews(mergedNews);
         setLoadingNews(false);
