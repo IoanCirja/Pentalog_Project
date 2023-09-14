@@ -34,16 +34,18 @@ function News() {
 
   return (
     <div>
-
       <div className="header">
-        <h1>News Page</h1>
+      <img src="/stock-logo.svg" alt="Stock Tracker Logo" />
+
+        <h1>Stock Tracker</h1>
+        <div>
         <Link to="/">
           <button>Return to Home</button>
         </Link>
 
+        </div>
 
       </div>
-
 
       <div className="News">
         <h2>Company & Market News</h2>
