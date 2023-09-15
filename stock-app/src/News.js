@@ -35,7 +35,8 @@ function News() {
     window.addEventListener("scroll", handleScroll);
 
 
-    const apiKey = process.env.REACT_APP_FINHUB_API_KEY;
+    
+    const apiKey = 'ck0lj1hr01qtrbkm4og0ck0lj1hr01qtrbkm4ogg';
     const newsApiUrl = `https://finnhub.io/api/v1/news?category=${filterOption}&token=${apiKey}`;
 
     axios
