@@ -1,35 +1,32 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import News from './News';
 
 function App() {
   return (
     <Router>
-      <AppContent />
+      <Routes>
+        <Route path="/news" element={<News />} />
+        <Route path="/" element={<Home />} />
+      </Routes>
     </Router>
   );
 }
 
-function AppContent() {
-  const location = useLocation();
-
+function Home() {
   return (
-    <div className="App">
-      <nav style={{ display: location.pathname === '/news' ? 'none': 'block' }}>
-        <ul>
-          {location.pathname !== '/news' && (
-            <li>
-              <Link to="/news">News</Link>
-            </li>
-          )}
-        </ul>
-      </nav>
-      <Routes>
-        <Route path="/news" element={<News />} />
-      </Routes>
+    <div className="header">
+      <div className="left">
+        <img src="/stock-logo.svg" alt="Stock Tracker Logo" />
+        <h1>Stock Tracker</h1>
+      </div>
+      <div className="right">
+        <Link to="/news">
+          <button>News</button>
+        </Link>
+      </div>
     </div>
   );
 }
-
 
 export default App;

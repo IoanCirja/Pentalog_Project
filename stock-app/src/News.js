@@ -15,7 +15,7 @@ function News() {
     axios
       .get(newsApiUrl)
       .then((response) => {
-        const newsData = response.data.slice(1, 26);
+        const newsData = response.data.slice(3, 26);
         setNews(newsData);
         setLoadingNews(false);
       })
