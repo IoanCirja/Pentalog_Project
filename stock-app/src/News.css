@@ -102,7 +102,7 @@ a:visited {
 }
 
 .filter-select {
-  padding: 10px;
+  padding: 1px 6px;
   border-radius: 5px;
 
   width: 100%;
@@ -130,3 +130,28 @@ a:visited {
   width: auto;
   justify-content: space-between;
 }
+
+.horizontal-line {
+  border-top: 2px solid #354649;
+  width: 100%; 
+  margin-top: 20px; 
+  display: block;
+  margin: 0px;
+}
+
+
+.scroll-to-top-button{
+  margin-left: auto;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
