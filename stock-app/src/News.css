@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;800&display=swap");
+
+.News {
+  font-family: "Dosis", sans-serif;
+  margin: 20px;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #e0e7e9;
+}
+.header {
+  background-color: #354649;
+  color: #e0e7e9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Dosis", sans-serif;
+  width: auto;
+  padding: 10px 40px;
+  position: sticky;
+  top: 0;
+}
+.left {
+  display: flex;
+  align-items: center;
+}
+.header button,
+.filter-select {
+  border: 1.5px solid #e0e7e9;
+  height: 50px;
+  width: 200px;
+  background-color: #6c7a89;
+  color: #e0e7e9;
+  border-radius: 5px;
+  font-family: "Dosis", sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.header button:hover,
+.filter-select:focus,
+.filter-select:hover {
+  background-color: #a3c6c4;
+  color: #354649;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header h1 {
+  font-size: 20px;
+}
+.header img {
+  width: 100px;
+  height: 70px;
+  object-fit: contain;
+}
+
+h2 {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #e0e7e9;
+}
+
+a {
+  text-decoration: none;
+  color: #354649;
+  font-weight: 800;
+  font-size: 25px;
+}
+
+li p {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+a:visited {
+  color: #6c7a89;
+}
+
+.News h2 {
+  font-weight: 800;
+  font-size: 30px;
+  color: #354649;
+}
+
+.filter-select {
+  padding: 10px;
+  border-radius: 5px;
+
+  width: 100%;
+  max-width: 200px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.filter-select option {
+  background-color: #e0e7e9;
+  color: #354649;
+}
+.filter-select option:hover {
+  background-color: #e0e7e9;
+  color: #354649;
+}
+
+.filter-select:focus,
+.filter-select:hover {
+  border-color: #354649;
+}
+
+.filters {
+  display: flex;
+  width: auto;
+  justify-content: space-between;
+}

@@ -1,0 +1,9 @@
+{
+  "trailingComma": "es5",
+  "semi": true,
+  "bracketSpacing": true,
+  "printWidth": 80,
+  "editor.formatOnSave": true,
+  "tabWidth": 2,
+  "arrowParens": "always"
+}
