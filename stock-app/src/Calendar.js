@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 
-function Calendar() {
+function CustomCalendar() {
   const [calendarData, setCalendarData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -22,36 +24,36 @@ function Calendar() {
       });
   }, []);
 
+  const eventDates = calendarData.map(event => new Date(event.fromDate));
+
   return (
     <div>
       <h2>Calendar Data</h2>
       {loading ? (
         <p>Loading calendar data...</p>
       ) : (
-        <ul>
-          {calendarData.map((event, index) => (
-            <li key={index}>
-              <div>
-                <strong>Event Description:</strong> {event.eventDescription}
-              </div>
-              <div>
-                <strong>From Date:</strong> {event.fromDate}
-              </div>
-              <div>
-                <strong>To Date:</strong> {event.toDate}
-              </div>
-              <div>
-                <strong>URL:</strong>{" "}
-                <a href={event.url} target="_blank" rel="noopener noreferrer">
-                  {event.url}
-                </a>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <div>
+          <Calendar
+            value={eventDates}
+            tileContent={({ date }) => {
+              const eventForDate = calendarData.find(event => {
+                const eventDate = new Date(event.fromDate);
+                return eventDate.getDate() === date.getDate() &&
+                  eventDate.getMonth() === date.getMonth() &&
+                  eventDate.getFullYear() === date.getFullYear();
+              });
+
+              return eventForDate ? (
+                <div style={{ textAlign: 'center' }}>
+                  {eventForDate.eventDescription}
+                </div>
+              ) : null;
+            }}
+          />
+        </div>
       )}
     </div>
   );
 }
 
-export default Calendar;
+export default CustomCalendar;

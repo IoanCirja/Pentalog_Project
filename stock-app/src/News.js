@@ -30,10 +30,8 @@ function News() {
   };
 
   useEffect(() => {
-
     handleScroll();
     window.addEventListener("scroll", handleScroll);
-
 
     const apiKey = process.env.REACT_APP_FINHUB_API_KEY;
     const newsApiUrl = `https://finnhub.io/api/v1/news?category=${filterOption}&token=${apiKey}`;
