@@ -1,19 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import News from './News';
+import Modal from 'react-modal';
+import SignupForm from './SignupForm';
+
+Modal.setAppElement('#root');
 
 function App() {
+  const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
+
+  const openSignupModal = () => {
+    setIsSignupModalOpen(true);
+  };
+
+  const closeSignupModal = () => {
+    setIsSignupModalOpen(false);
+  };
+
   return (
     <Router>
       <Routes>
         <Route path="/news" element={<News />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home openSignupModal={openSignupModal} />} />
       </Routes>
+      <Modal
+        isOpen={isSignupModalOpen}
+        onRequestClose={closeSignupModal}
+        contentLabel="Login"
+      >
+        <SignupForm isOpen={isSignupModalOpen} onRequestClose={closeSignupModal} />
+      </Modal>
     </Router>
   );
 }
 
-function Home() {
+function Home({ openSignupModal }) {
   return (
     <div className="App">
       <div className="header">
@@ -39,7 +60,19 @@ function Home() {
           <li> ✔ Leader in regulatory compliance and security certifications</li>
           <li> ✔ The industry’s most comprehensive insurance coverage and verified proof of reserves</li>
         </ul>
-
+      <div id="cryptoWorld">
+        <div id="btn-h2-main">
+        <button id="btnDialog" onClick={openSignupModal}>START MINING ➡</button>
+        <h2 id="h2Main">Your crypto journey starts here.</h2>
+        </div>
+        <ul id="mainList">
+          <li>⚪ Buy crypto</li>
+          <li> ⚪ Recurring Buy</li>
+          <li> ⚪ Price Alerts</li>
+          <li> ⚪  On-chain Staking</li>
+         
+        </ul>
+        </div>
       </main>
     </div>
   );
