@@ -1,12 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import News from './News';
+import FDAEventCalendar from './Calendar'; // Import the Calendar component
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/news" element={<News />} />
+        <Route path="/calendar" element={<FDAEventCalendar />} /> {/* Add route for the Calendar component */}
         <Route path="/" element={<Home />} />
       </Routes>
     </Router>
@@ -23,6 +25,9 @@ function Home() {
       <div className="right">
         <Link to="/news">
           <button>News</button>
+        </Link>
+        <Link to="/calendar"> {/* Add a Link to the Calendar page */}
+          <button>Calendar</button>
         </Link>
       </div>
     </div>
