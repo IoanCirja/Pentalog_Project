@@ -154,4 +154,94 @@ a:visited {
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
 }
+#h1Main{
+  color:#354649;
+  font-size: 50px;
+  text-align: center;
+  font-family: "Dosis", sans-serif;
+}
+#h2Main{
+  color:#354649;
+  font-size: 30px;
+  text-align: center;
+  font-family: "Dosis", sans-serif;
+}
+#mainList{
+  font-weight: bold;
+  text-align: center;
+  font-family: "Dosis", sans-serif;
+}
+#loginButton{
+  padding: 10px 20px;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  background-color:#354649; /* Culoarea de fundal */
+  color: #e0e7e9;
+  border: none; 
+  border-radius: 8px; 
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
+  font-family: "Dosis", sans-serif;
+}
+#h2Dialog{
+  color:#354649;
+  font-family: "Dosis", sans-serif;
+}
+#loginButton:hover {
+  background-color: #6C7A89; /* O altă culoare de fundal */
+}
+#dialogLogin{
+  display: flex;
+  z-index:1000;
+  width: 390px;
+  height: 390px;
+  flex-direction: column;
+  margin-top: 50px;
+  gap:10px;
+  background-color: #e0e7e9;
+  border: 1px solid #ccc;
+  font-family: "Dosis", sans-serif;
+}
 
+input{
+  color:#354649;
+  background-color: #a3c6c4;
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc; /* Contur simplu */
+  border-radius: 5px; /* Colțuri rotunjite */
+  font-family: "Dosis", sans-serif;
+}
+#btnDialog{
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  background-color:#354649; /* Culoarea de fundal */
+  color: #e0e7e9;
+  border: none; 
+  border-radius: 8px; 
+  cursor: pointer;
+  width: 120px;
+  height: 60px;
+  margin-left: 50px;
+  font-family: "Dosis", sans-serif;
+}
+#cryptoWorld{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+#btn-h2-main{
+  padding-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color:  #e0e7e9;
+  width: 1000px;
+  align-items: center;
+}
