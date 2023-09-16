@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Calendar from 'react-calendar';
@@ -9,8 +8,9 @@ import "./Calendar.css";
 function CalendarComponent() {
   const [calendarData, setCalendarData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [tooltipContent, setTooltipContent] = useState(null); 
-
+  const [tooltipContent, setTooltipContent] = useState(null);
+  const [selectedDate, setSelectedDate] = useState(null);
+  
   useEffect(() => {
     const apiKey = process.env.REACT_APP_FINHUB_API_KEY;
     const calendarApiUrl = `https://finnhub.io/api/v1/fda-advisory-committee-calendar?token=${apiKey}`;
@@ -29,6 +29,18 @@ function CalendarComponent() {
   }, []);
 
   const eventDates = calendarData.map(event => new Date(event.fromDate));
+
+  const handleDayClick = (date) => {
+    const eventForDate = calendarData.find(event => {
+      const eventDate = new Date(event.fromDate);
+      return eventDate.getDate() === date.getDate() &&
+        eventDate.getMonth() === date.getMonth() &&
+        eventDate.getFullYear() === date.getFullYear();
+    });
+
+    setSelectedDate(date);
+    setTooltipContent(eventForDate);
+  };
 
   return (
     <div>
@@ -60,9 +72,8 @@ function CalendarComponent() {
 
               return eventForDate ? (
                 <div
-                  className="event-tile"
-                  onMouseEnter={() => setTooltipContent(eventForDate)}
-                  onMouseLeave={() => setTooltipContent(null)}
+                  className={`event-tile ${selectedDate && date.getDate() === selectedDate.getDate() ? 'selected' : ''}`}
+                  onClick={() => handleDayClick(date)} 
                 >
                   FDA Event
                 </div>
@@ -78,17 +89,20 @@ function CalendarComponent() {
 
               return eventForDate ? 'has-event' : null;
             }}
+            onClickDay={(date) => handleDayClick(date)}
           />
         </div>
       )}
       {tooltipContent && (
-        <div className="tooltip" style={{ top: tooltipContent.y, left: tooltipContent.x }}>
+        <div className="tooltip">
           <div><strong>Event Description:</strong> {tooltipContent.eventDescription}</div>
           <div id="url"><strong>URL:</strong> <a href={tooltipContent.url} target="_blank" rel="noopener noreferrer">{tooltipContent.url}</a></div>
         </div>
+
       )}
     </div>
   );
 }
 
 export default CalendarComponent;
+

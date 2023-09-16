@@ -1,14 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import News from './News';
-import FDAEventCalendar from './Calendar'; // Import the Calendar component
+import FDAEventCalendar from './Calendar'; 
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/news" element={<News />} />
-        <Route path="/calendar" element={<FDAEventCalendar />} /> {/* Add route for the Calendar component */}
+        <Route path="/calendar" element={<FDAEventCalendar />} /> 
         <Route path="/" element={<Home />} />
       </Routes>
     </Router>
@@ -26,7 +26,7 @@ function Home() {
         <Link to="/news">
           <button>News</button>
         </Link>
-        <Link to="/calendar"> {/* Add a Link to the Calendar page */}
+        <Link to="/calendar"> 
           <button>Calendar</button>
         </Link>
       </div>

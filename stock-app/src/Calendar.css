@@ -3,12 +3,12 @@
     --blue-2: #6C7A89;
     --blue-3: #A3C6C4;
     --blue-4: #E0E7E9;
-    
- }
+}
 
 @import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;800&display=swap");
+
 .react-calendar {
     width: auto;
     font-size: 20px;
@@ -16,74 +16,71 @@
     margin: 1rem;
 }
 
-.react-calendar, .react-calendar__tile {
+.react-calendar,
+.react-calendar__tile {
     border: none;
     font-family: "Dosis", sans-serif;
 }
-.react-calendar__tile--hasActive{
+
+.react-calendar__tile--hasActive {
     background: var(--blue-3);
 }
 
 .event-tile {
-    font-size: 15px; 
-  }
-  .react-calendar__tile {
     font-size: 15px;
-  }
-  
-  .react-calendar__month-view__days__day {
+}
+
+.react-calendar__month-view__days__day {
     font-size: 15px;
-  }
-  .react-calendar__month-view__days__day:hover, .react-calendar__month-view__days__day:enabled:focus {
-    background: var(--blue-3) ;
-  }
-  .react-calendar__tile--now, .react-calendar__tile--now:enabled:hover, .react-calendar__tile--now:enabled:focus {
-    background: var(--blue-3) ;
-  }
+}
 
-.event-tile {
-    font-size: 15px; 
-  }
-  
+.react-calendar__month-view__days__day:hover,
+.react-calendar__month-view__days__day:enabled:focus {
+    background: var(--blue-3);
+}
 
-  .tooltip {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color:var(--blue-3);
-    color: var(--blue-1);
-    padding: 10px;
+.react-calendar__tile--now,
+.react-calendar__tile--now:enabled:hover,
+.react-calendar__tile--now:enabled:focus {
+    background: var(--blue-3);
+}
+
+.tooltip {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 20px;
     border-radius: 5px;
-    z-index: 1000;
+    background-color: #e0e7e9;
+    color: var(--blue-1);
     font-family: "Dosis", sans-serif;
     font-size: 18px;
+}
 
-  }
 .tooltip a {
     font-size: 18px;
     color: var(--blue-1);
-    font-weight: normal;
+    font-weight: 800;
 }
 
-#url{
+#url {
     margin-top: 15px;
-} 
+}
 
 .has-event {
     background-color: var(--blue-4);
-  }
+}
+
 .has-event:hover {
     background-color: var(--blue-3);
-  }
+}
 
-.react-calendar button{
+.react-calendar button {
     margin: 5px 0px;
     border: 1px solid var(--blue-4);
     border-radius: 5px;
 }
 
-.react-calendar button:hover{
+.react-calendar button:hover {
     background-color: var(--blue-3);
     color: var(--blue-1);
     border: 1px solid var(--blue-3);
