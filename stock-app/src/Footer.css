@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@400;600;800&display=swap");
+
+#footer2{
+    background-color:#354649;
+    color: #E0E7E9;
+    font-size:18px;
+    font-family: "Dosis", sans-serif;
+}
+footer img {
+    width: 100px;
+    height: 70px;
+    object-fit: contain;
+  }
+  #link1{
+    font-size:18px;
+    color:  #E0E7E9;
+    font-family: "Dosis", sans-serif;
+    font-weight: normal;
+  }
+  .usefulLinks{
+    display: grid;
+    grid-template-rows: 60px 42px 35px; 
+  }
+  .aboutApp{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+ 
+  .footer-logo {
+    display: flex;
+    flex-direction: row;
+    margin-left:20px;
+    padding-top: 20px;
+    object-fit: contain;
+  }
+
+  #icon{
+    width:40px;
+    height: 40px;
+  }
+  #icon:hover {
+    transform: scale(1.1); 
+  }
+  #copyright{
+    margin-left: 40px;
+    background-color: #354649;
+  }
+  #footer1{
+    background-color: #a3c6c4;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  #h2f1{
+   color:#354649;
+   font-weight: bold;
+   font-family: "Dosis", sans-serif;
+   font-size:25px;
+  }
+  #h1f1{
+    color:#354649;
+    font-family: "Dosis", sans-serif;
+    font-size: 50px;
+  }
+  #h1Logo{
+    color:#354649;
+  }
+  .footer-logo1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  #About{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+   
+  }
