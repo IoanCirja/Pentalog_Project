@@ -94,10 +94,13 @@ function CalendarComponent() {
         </div>
       )}
       {tooltipContent && (
-        <div className="tooltip">
-          <div><strong>Event Description:</strong> {tooltipContent.eventDescription}</div>
-          <div id="url"><strong>URL:</strong> <a href={tooltipContent.url} target="_blank" rel="noopener noreferrer">{tooltipContent.url}</a></div>
-        </div>
+          <div className={`tooltip show fade-in`}>
+          <div id="url">
+            <a href={tooltipContent.url} target="_blank" rel="noopener noreferrer">
+            {tooltipContent.eventDescription}
+            </a>
+          </div>
+          </div>
 
       )}
     </div>

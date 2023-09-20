@@ -46,24 +46,14 @@
 }
 
 .tooltip {
-    margin-top: 30px;
-    margin-bottom: 20px;
-    padding: 20px;
+    margin: 30px 40px;
+    padding: 30px 20px;
     border-radius: 5px;
     background-color: #e0e7e9;
     color: var(--blue-1);
     font-family: "Dosis", sans-serif;
-    font-size: 18px;
-}
-
-.tooltip a {
-    font-size: 18px;
-    color: var(--blue-1);
+    font-size: 25px;
     font-weight: 800;
-}
-
-#url {
-    margin-top: 15px;
 }
 
 .has-event {
