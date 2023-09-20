@@ -14,12 +14,15 @@
     font-size: 20px;
     font-family: "Dosis", sans-serif;
     margin: 1rem;
+    
 }
+
 
 .react-calendar,
 .react-calendar__tile {
     border: none;
     font-family: "Dosis", sans-serif;
+    font-weight: 800;
 }
 
 .react-calendar__tile--hasActive {
@@ -32,6 +35,7 @@
 
 .react-calendar__month-view__days__day {
     font-size: 15px;
+
 }
 
 .react-calendar__month-view__days__day:hover,
@@ -68,6 +72,7 @@
     margin: 5px 0px;
     border: 1px solid var(--blue-4);
     border-radius: 5px;
+    width: 50px;
 }
 
 .react-calendar button:hover {
@@ -75,3 +80,5 @@
     color: var(--blue-1);
     border: 1px solid var(--blue-3);
 }
+
+

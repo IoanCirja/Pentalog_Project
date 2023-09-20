@@ -29,13 +29,13 @@ function SignupForm({ isOpen, onRequestClose }) {
     <div className={`signup-form ${isOpen ? 'open' : ''}`}>
       {isLoggedIn ? (
         <div id="output">
-          <p id="dialog-text">Step into the Crypto World: Your Best Decision Today!</p>
+          <p id="dialog-text">Step into the Stock World: Your Best Decision Today!</p>
           <img src="/crypto.svg" id="crypto-logo" alt="crypto logo" />
           <button id="start-button" onClick={handleClose}>Explore</button>
         </div>
       ) : (
         <dialog id="dialogLogin" open={isOpen}>
-          <h2 id="h2Dialog">Access the Cryptoverse</h2>
+          <h2 id="h2Dialog">Access the Financial World!</h2>
           <form onSubmit={handleSubmit}>
             <div>
               <label>Username</label>

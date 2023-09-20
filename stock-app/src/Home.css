@@ -74,13 +74,21 @@
     text-decoration: none;
     background-color:#354649; /* Culoarea de fundal */
     color: #e0e7e9;
+    font-weight: 800;
     border: none; 
-    border-radius: 8px; 
+    border-radius: 5px; 
     cursor: pointer;
-    width: 120px;
+    width: 190px;
     height: 60px;
     margin-left: 50px;
     font-family: "Dosis", sans-serif;
+  }
+
+
+  #btnDialog:hover{
+    background-color: #A3C6C4;
+    color: #354649;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   #cryptoWorld{
     display: flex;
@@ -92,9 +100,11 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    border-radius: 5px;
     background-color:  #e0e7e9;
     width: 1000px;
     align-items: center;
+    margin-bottom: 20px;
   }
   #dialog-text{
     font-weight: bold;
@@ -119,7 +129,7 @@
     background-color:#e0e7e9; 
     color: #354649;
     border: none; 
-    border-radius: 8px; 
+    border-radius: 5px; 
     cursor: pointer;
     width: 100px;
     height: 40px;
@@ -131,4 +141,23 @@
   #crypto-logo{
     width: 400px;
     height: 400px;
+  }
+
+  .right button{
+    margin: 0px 10px
+  }
+
+  .fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .scrollbtn {
+    margin-left: auto;
+    margin-right: 10px;
+    border-radius: 50%;
   }

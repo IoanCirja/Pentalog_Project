@@ -7,6 +7,7 @@
     color: #E0E7E9;
     font-size:18px;
     font-family: "Dosis", sans-serif;
+    text-align: center;
 }
 footer img {
     width: 100px;
@@ -40,6 +41,7 @@ footer img {
   #icon{
     width:40px;
     height: 40px;
+    margin-left: 5px;
   }
   #icon:hover {
     transform: scale(1.1); 
@@ -47,6 +49,8 @@ footer img {
   #copyright{
     margin-left: 40px;
     background-color: #354649;
+    margin-bottom: 0px;
+    padding-bottom: 20px;
   }
   #footer1{
     background-color: #a3c6c4;

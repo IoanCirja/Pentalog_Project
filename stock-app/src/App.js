@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import News from './News';
 import Charts from './Charts';
@@ -41,13 +41,55 @@ function App() {
 }
 
 function Home({ openSignupModal }) {
+
+
+  const handleScroll = () => {
+    const scrollButton = document.getElementById("scroll");
+    if (scrollButton) {
+      if (window.scrollY > 100) {
+        scrollButton.classList.add("fade-in");
+        scrollButton.classList.remove("fade-out");
+      } else {
+        scrollButton.classList.remove("fade-in");
+        scrollButton.classList.add("fade-out");
+      }
+    }
+  };
+
+  const handleScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+
+  useEffect(() => {
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+
+
+
   return (
     <div className="App">
       <div className="header">
         <div className="left">
           <img src="/stock-logo.svg" alt="Stock Tracker Logo" />
           <h1>Stock Tracker</h1>
+
+
         </div>
+
+        <button
+          onClick={handleScrollToTop}
+          className="scrollbtn fade-out"
+          id="scroll"
+        >
+          ↑
+        </button>
         <div className="right">
           <Link to="/news">
             <button>News</button>
@@ -64,9 +106,9 @@ function Home({ openSignupModal }) {
 
       <main>
         <h1 id="h1Main">The World’s Leading <br></br>
-          Cryptocurrency Platform</h1>
+          Stock Tracking Platform</h1>
 
-        <h2 id="h2Main">Buy Bitcoin, Ethereum, and all your favourite crypto</h2>
+        <h2 id="h2Main">Keep an eye on your favorite stocks, get up-to-date news about World’s Finances, and much more!</h2>
 
         <ul id="mainList">
           <li>✔ Trusted by more than 80M users world-wide</li>
@@ -75,15 +117,15 @@ function Home({ openSignupModal }) {
         </ul>
       <div id="cryptoWorld">
         <div id="btn-h2-main">
-        <button id="btnDialog" onClick={openSignupModal}>START MINING ➡</button>
-        <h2 id="h2Main">Your crypto journey starts here.</h2>
+        <button id="btnDialog" onClick={openSignupModal}>START TRACKING ➡</button>
+        <h2 id="h2Main">Your finance journey starts here.</h2>
         
         </div>
         <ul id="mainList">
-          <li>⚪ Buy crypto</li>
-          <li> ⚪ Recurring Buy</li>
+          <li>⚪ Track Company Stocks</li>
+          <li> ⚪ FDA Events</li>
           <li> ⚪ Price Alerts</li>
-          <li> ⚪  On-chain Staking</li>
+          <li> ⚪ Finances Newsletter</li>
          
         </ul>
         </div>
@@ -96,8 +138,8 @@ function Home({ openSignupModal }) {
 
 <div id="footer1">
 <h2 id="h2f1">OUR VISION</h2>
-<h1 id="h1f1">Cryptocurrency in<br></br>
-Every Wallet™</h1>
+<h1 id="h1f1">Financials in<br></br>
+Every Mind™</h1>
 <div className="footer-logo1">
           <img src="/stock-logo-footer.svg" alt="Stock Tracker Logo"/>
           <h1 id="h1Logo">Stock Tracker</h1>
@@ -129,7 +171,7 @@ Every Wallet™</h1>
         <div className="contact">
         <p>CONTACT</p>
         <p> ✆ Phone: +1-543-123-4567</p>
-        <p>✉ stocktracker5@gmail.com</p>
+        <p>✉ Stock-Tracker@gmail.com</p>
         </div>
 
         <div className="usefulLinks">
@@ -139,7 +181,7 @@ Every Wallet™</h1>
         </div>
 
         <div className="follow-us">
-        <p>USEFUL LINKS</p>
+        <p>LET'S KEEP IN TOUCH!</p>
         <Link id="link1" to="https://www.facebook.com/">
         <img id="icon" src="/icons8-facebook.svg" alt="Facebook Logo" />
         </Link>
