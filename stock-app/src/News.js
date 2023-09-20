@@ -30,10 +30,8 @@ function News() {
   };
 
   useEffect(() => {
-
     handleScroll();
     window.addEventListener("scroll", handleScroll);
-
 
     const apiKey = process.env.REACT_APP_FINHUB_API_KEY;
     const newsApiUrl = `https://finnhub.io/api/v1/news?category=${filterOption}&token=${apiKey}`;
@@ -41,10 +39,11 @@ function News() {
     axios
       .get(newsApiUrl)
       .then((response) => {
-        const newsData = response.data.slice(3, 26);
+        const newsData = response.data.slice(4, 26);
         setNews(newsData);
         setLoadingNews(false);
       })
+
       .catch((error) => {
         console.error("Error fetching news:", error);
         setLoadingNews(false);

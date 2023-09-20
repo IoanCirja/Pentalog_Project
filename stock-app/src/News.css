@@ -133,14 +133,13 @@ a:visited {
 
 .horizontal-line {
   border-top: 2px solid #354649;
-  width: 100%; 
-  margin-top: 20px; 
+  width: 100%;
+  margin-top: 20px;
   display: block;
   margin: 0px;
 }
 
-
-.scroll-to-top-button{
+.scroll-to-top-button {
   margin-left: auto;
   margin-right: 20px;
   border-radius: 50%;
@@ -154,4 +153,3 @@ a:visited {
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
 }
-
