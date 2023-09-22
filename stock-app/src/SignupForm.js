@@ -1,37 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import "./Home.css";
 
 function SignupForm({ isOpen, onRequestClose }) {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log('Login with:', username, 'and password:', password);
+    console.log("Login with:", username, "and password:", password);
 
     if (username && password) {
       setIsLoggedIn(true);
     } else {
-      alert('Please fill in both username and password.');
+      alert("Please fill in both username and password.");
     }
   };
 
   const handleClose = () => {
     setIsLoggedIn(false);
-    setUsername('');
-    setPassword('');
+    setUsername("");
+    setPassword("");
     onRequestClose();
   };
 
   return (
-    <div className={`signup-form ${isOpen ? 'open' : ''}`}>
+    <div className={`signup-form ${isOpen ? "open" : ""}`}>
       {isLoggedIn ? (
         <div id="output">
-          <p id="dialog-text">Step into the Stock World: Your Best Decision Today!</p>
+          <p id="dialog-text">
+            Step into the Stock World: Your Best Decision Today!
+          </p>
           <img src="/crypto.svg" id="crypto-logo" alt="crypto logo" />
-          <button id="start-button" onClick={handleClose}>Explore</button>
+          <button id="start-button" onClick={handleClose}>
+            Explore
+          </button>
         </div>
       ) : (
         <dialog id="dialogLogin" open={isOpen}>
@@ -54,7 +58,7 @@ function SignupForm({ isOpen, onRequestClose }) {
               />
             </div>
             <button type="submit" id="loginButton">
-              {isLoggedIn ? 'Welcome!' : 'Login'}
+              {isLoggedIn ? "Welcome!" : "Login"}
             </button>
           </form>
         </dialog>

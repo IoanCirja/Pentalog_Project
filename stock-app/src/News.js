@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./News.css";
+import Footer from "./Footer";
 
 function News() {
   const [news, setNews] = useState([]);
@@ -33,7 +34,7 @@ function News() {
     handleScroll();
     window.addEventListener("scroll", handleScroll);
 
-    const apiKey = 'ck0lj1hr01qtrbkm4og0ck0lj1hr01qtrbkm4ogg'
+    const apiKey = process.env.REACT_APP_FINHUB_API_KEY;
     const newsApiUrl = `https://finnhub.io/api/v1/news?category=${filterOption}&token=${apiKey}`;
 
     axios
@@ -112,6 +113,7 @@ function News() {
           </ul>
         )}
       </div>
+      <Footer />
     </div>
   );
 }

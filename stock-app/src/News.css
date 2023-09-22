@@ -30,7 +30,9 @@ h1 {
   align-items: center;
 }
 .header button,
-.filter-select {
+.filter-select,
+#loginButton,
+#start-button {
   border: 1.5px solid #e0e7e9;
   height: 50px;
   width: 200px;
@@ -44,7 +46,9 @@ h1 {
 
 .header button:hover,
 .filter-select:focus,
-.filter-select:hover {
+.filter-select:hover,
+#loginButton:hover, 
+#start-button:hover {
   background-color: #a3c6c4;
   color: #354649;
   transition: background-color 0.3s ease, color 0.3s ease;
