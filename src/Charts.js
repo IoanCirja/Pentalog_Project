@@ -32,7 +32,7 @@ function Charts() {
   useEffect(() => {
     handleScroll();
     window.addEventListener("scroll", handleScroll);
-    const apiKey = process.env.REACT_APP_FINHUB_API_KEY;
+    const apiKey = 'ck0lj1hr01qtrbkm4og0ck0lj1hr01qtrbkm4ogg';
     const interval = "D";
 
     axios
@@ -114,7 +114,7 @@ function Charts() {
     },
   };
   const fetchMatchingCompanies = (searchTerm) => {
-    const apiKey = process.env.REACT_APP_FINHUB_API_KEY;
+    const apiKey = 'ck0lj1hr01qtrbkm4og0ck0lj1hr01qtrbkm4ogg';
 
     axios
       .get(`https://finnhub.io/api/v1/search?q=${searchTerm}&token=${apiKey}`)

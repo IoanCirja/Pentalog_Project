@@ -32,7 +32,7 @@ function CalendarComponent() {
   useEffect(() => {
     handleScroll();
     window.addEventListener("scroll", handleScroll);
-    const apiKey = process.env.REACT_APP_FINHUB_API_KEY;
+    const apiKey = 'ck0lj1hr01qtrbkm4og0ck0lj1hr01qtrbkm4ogg';
     const calendarApiUrl = `https://finnhub.io/api/v1/fda-advisory-committee-calendar?token=${apiKey}`;
 
     axios
