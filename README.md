@@ -1,4 +1,4 @@
-# Financial Data Processing Web Application
+# Stock Tracker - Financial Data Processing Web Application
 
 This web application is built using React.js and utilizes the Finhub API for financial data retrieval and Chart.js for visualizing stock data. It offers various features related to financial data processing.
 
