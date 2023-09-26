@@ -42,6 +42,6 @@ This web application is built using React.js and utilizes the Finhub API for fin
 To use this application, follow these steps:
 
 1. Clone the repository.
-2. Install the necessary dependencies (see [Installation](#installation)).
+2. Install the necessary dependencies with npm install.
 3. Run the application locally.
 4. Access the different pages and features as needed.
